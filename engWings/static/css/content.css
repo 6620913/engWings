@@ -482,7 +482,7 @@ a:focus {
 .about_section .row {
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+  /* align-items: center; */
 }
 
 
@@ -491,7 +491,8 @@ a:focus {
 }
 .about_section .detail-box {
     background-color: #ffffff;
-    padding: 45px 25px;
+    
+    padding: 2%;
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
             box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
     position: relative;
@@ -509,7 +510,7 @@ a:focus {
 
 .about_section video {
   background-color: #180b4b;
-  padding: 1px 1px;
+  padding: 5px;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
   position: relative;
@@ -521,10 +522,7 @@ a:focus {
 .about_section .detail-box p {
   margin-top: 5px;
 }
-/* .about_section video{
-  width: auto;
-  height: auto;
-} */
+
 
 .about_section .detail-box a {
   display: inline-block;
