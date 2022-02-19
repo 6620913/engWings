@@ -486,7 +486,7 @@ a:focus {
 }
 
 
-.about_section .img_container .img-box img {
+.about_section .img_container  .img-box img {
   width: 100%;
 }
 .about_section .detail-box {
@@ -522,11 +522,17 @@ a:focus {
 .about_section .detail-box p {
   margin-top: 5px;
 }
+.sdisc p{
+  align-content: flex-start;
+}
 
-
+.about_section .detail-box img{
+  width: 100%;
+  
+}
 .about_section .detail-box a {
   display: inline-block;
-  padding: 10px 35px;
+  padding: 10px;
   background-color: #8eec69;
   color: #ffffff;
   -webkit-transition: all 0.3s;

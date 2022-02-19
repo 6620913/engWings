@@ -26,10 +26,12 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" type="text/css"
+    href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
 
   <!-- fonts style -->
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap' %}" rel="stylesheet" />
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap' %}"
+    rel="stylesheet" />
 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/content.css'%}" rel="stylesheet" />
@@ -71,40 +73,41 @@
           </div>
         </div>
       </div> -->
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="/">
-              <span>
-                engWings
-              </span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""></span>
-            </button>
+    <div class="header_bottom">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="/">
+            <span>
+              engWings
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""></span>
+          </button>
 
-            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-              <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/content"> Content </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="/about"> About</a>
-                </li>
-                <!-- <li class="nav-item">
+          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/content"> Content </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/about"> About</a>
+              </li>
+              <!-- <li class="nav-item">
                   <a class="nav-link" href="countries.html"> Countries </a>
                 </li> -->
-                <li class="nav-item">
-                  <a class="nav-link" href="/contact">Contact us</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
+    </div>
     </header>
     <!-- end header section -->
   </div>
@@ -116,83 +119,65 @@
   <section class="about_section layout_padding">
     <div class="container">
       <div class="row">
-        
+
         <div class="col-lg-6 px-0">
-          
-          {% for video in videos  %}
+
+          {% for video in videos %}
           <!-- <video src="{{video.video.url}}"></video> -->
-          
-          
+
+
           {% endfor %}
           <video class="embed-responsive embed-responsive-16by8" controls="controls">
             <source src="{{front.video.url}}" type="video/mp4" />
             <h3 class="text-center mt-2 mb-2"> {{video.title}}</h3>
 
-        </video>
-        
-      </div>
+          </video>
+
+        </div>
         <div class="col-lg-6 px-0">
-          
-         
+
+
           <div class="detail-box">
             <div class="heading_container ">
-              <!-- <h2>
-                Videos
 
-              </h2> -->
               <div class="btn-box">
+                <a href="">
+                  Read More
+                </a>
+              </div>
+            </div>
+            <br>
+
+            <div class="col">
+
+              {% for video in videos %}
               <a href="">
-                Read More
+
+                <!-- <video src="{{video.video.url}}"></video> -->
+                <div class="row">
+
+                  <div class="col">
+                    <img src="{{video.thumbnail.url}}" alt="">
+                  </div>
+
+                  <div class="col sdisc">
+                    <p class="text-center mt-2 mb-2"> {{video.title}}</p>
+                  </div>
+                </div>
+
               </a>
-            </div>
-            </div>
-            <p>
-              <div class="col">
-                
-              {% for video in videos  %}
-              <!-- <video src="{{video.video.url}}"></video> -->
-              <div class="row">
-              <button>title</button>
-              <div class="col">
-              <video class="embed-responsive embed-responsive-16by8" controls="controls">
-                <source src="{{video.video.url}}" type="video/mp4" />
-                
-    
-            </video>
-          </div>
-          <div class="col">
-            <h3 class="text-center mt-2 mb-2"> {{video.title}}</h3>
-          </div>
-        </div>
-              <br>
-            </div>
-              
+
               {% endfor %}
             </div>
-              
-              <button>title</button>
-              <br>
-              <button>title</button>
-              <br>
-              <button>title</button>
-              <br>
-              <button>title</button>
-              <br>
-              <button>title</button>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis minima amet sint, vitae culpa ullam eaque pariatur ex suscipit maiores? Exercitationem quaerat aspernatur atque culpa magnam facilis quibusdam distinctio nisi. Suscipit eius minus dolorem sunt maiores iusto impedit, voluptatum molestiae. Cum alias ea ipsum exercitationem id placeat sequi saepe ducimus, eaque necessitatibus animi aperiam quis velit dolor illo quas nulla consectetur recusandae, ipsa dolores voluptatum labore. Provident, animi nam quasi error cum quam nobis ut rem officiis vitae ea natus, maiores impedit accusantium porro laboriosam expedita distinctio asperiores autem. Pariatur delectus harum veritatis aut possimus ipsum odit a, nostrum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint asperiores eaque obcaecati blanditiis voluptatibus incidunt excepturi expedita pariatur veniam dolore in repudiandae fugiat, alias sapiente enim ratione impedit. Consequatur ut deserunt officiis corrupti aliquid excepturi maxime adipisci obcaecati vel laudantium!lorem100
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolores est ad necessitatibus mollitia esse cum repudiandae maxime iste ipsum magnam praesentium atque porro corporis, tempora vitae. Dolore facilis ipsam, quos rerum ea quia perferendis! Commodi ipsam impedit ut dolore amet id tenetur nisi velit iure consectetur sed optio quasi architecto, vel aperiam unde incidunt? Vero facere eos fugiat non ipsam totam excepturi ea minima adipisci minus qui quidem modi quasi, expedita assumenda aperiam, reprehenderit nesciunt accusantium delectus neque quae, inventore iure. Exercitationem unde ipsam totam aliquam quisquam quae iste asperiores, iure, doloribus recusandae optio ea repellat, natus possimus.
-                      
-            </p>
-            <!-- <div class="btn-box">
-              <a href="">
-                Read More
-              </a>
-            </div> -->
+
+
+
+
           </div>
-         
+
         </div>
-       
-        
+
+
       </div>
     </div>
   </section>
@@ -212,7 +197,7 @@
             </a>
             <p>
               Dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quisdotempor incididunt r
-              
+
             </p>
           </div>
         </div>
