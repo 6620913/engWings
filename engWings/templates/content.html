@@ -20,7 +20,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="{ % static 'images/favicon.png'%}" type="image/x-icon">
 
-  <title>engWings -> about</title>
+  <title>engWings -> Content</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <header class="header_section">
+    <!-- <header class="header_section">
       <div class="header_top">
         <div class="container-fluid">
           <div class="contact_link-container">
@@ -70,7 +70,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
@@ -147,8 +147,29 @@
             </div>
             </div>
             <p>
+              <div class="col">
+                
+              {% for video in videos  %}
+              <!-- <video src="{{video.video.url}}"></video> -->
+              <div class="row">
               <button>title</button>
+              <div class="col">
+              <video class="embed-responsive embed-responsive-16by8" controls="controls">
+                <source src="{{video.video.url}}" type="video/mp4" />
+                
+    
+            </video>
+          </div>
+          <div class="col">
+            <h3 class="text-center mt-2 mb-2"> {{video.title}}</h3>
+          </div>
+        </div>
               <br>
+            </div>
+              
+              {% endfor %}
+            </div>
+              
               <button>title</button>
               <br>
               <button>title</button>
