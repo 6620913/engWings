@@ -1,3 +1,9 @@
+<!-- {% for video in videos %}
+              <video src="{{video.video.url}}"></video>
+              <video class="embed-responsive embed-responsive-16by9" controls="controls">
+                  <source src="{{video.video.url}}" type="video/webm" />
+              </video>
+              {% endfor %} -->
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -12,21 +18,21 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+  <link rel="shortcut icon" href="{ % static 'images/favicon.png'%}" type="image/x-icon">
 
-  <title>engWings -> Content</title>
+  <title>engWings -> about</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'%}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
 
   <!-- fonts style -->
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap'%}" rel="stylesheet" />
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap' %}" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+  <link href="{% static 'css/content.css'%}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{% static 'css/responsive.css'%}" rel="stylesheet" />
 </head>
@@ -36,7 +42,7 @@
     <!-- header section strats -->
     <div class="hero_bg_box">
       <div class="img-box">
-        <img src="{% static 'images/hero-bg.jpg'% }" alt="">
+        <img src="{% static 'images/hero-bg.jpg'%}" alt="">
       </div>
     </div>
 
@@ -82,14 +88,14 @@
                 <li class="nav-item ">
                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="/content"> Content </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="/about"> About</a>
                 </li>
                 <!-- <li class="nav-item">
-                  <a class="nav-link" href="/"> Countries </a>
+                  <a class="nav-link" href="countries.html"> Countries </a>
                 </li> -->
                 <li class="nav-item">
                   <a class="nav-link" href="/contact">Contact us</a>
@@ -103,93 +109,72 @@
     <!-- end header section -->
   </div>
 
-  <!-- service section -->
-
-  <section class="service_section layout_padding">
+  <!-- about section -->
+  <!-- {% for video in videos %}
+  <video src="{{video.video.url}}"></video>
+  {%endfor%} -->
+  <section class="about_section layout_padding">
     <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Our services
-        </h2>
-      </div>
       <div class="row">
-        <div class="col-md-6">
-          <div class="box ">
-            <div class="img-box">
-              <img src="{% static 'images/s1.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h6>
-                Business Visa
-              </h6>
-              <p>
-                Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.
-              </p>
+        
+        <div class="col-lg-6 px-0">
+          
+          {% for video in videos  %}
+          <!-- <video src="{{video.video.url}}"></video> -->
+          
+          
+          {% endfor %}
+          <video class="embed-responsive embed-responsive-16by8" controls="controls">
+            <source src="{{front.video.url}}" type="video/mp4" />
+            <h3 class="text-center mt-2 mb-2"> {{video.title}}</h3>
+
+        </video>
+        
+      </div>
+        <div class="col-lg-6 px-0">
+          
+         
+          <div class="detail-box">
+            <div class="heading_container ">
+              <!-- <h2>
+                Videos
+
+              </h2> -->
+              <div class="btn-box">
               <a href="">
                 Read More
               </a>
             </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="box ">
-            <div class="img-box">
-              <img src="{% static 'images/s2.png'%}" alt="">
             </div>
-            <div class="detail-box">
-              <h6>
-                Work Visa
-              </h6>
-              <p>
-                Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.
-              </p>
+            <p>
+              <button>title</button>
+              <br>
+              <button>title</button>
+              <br>
+              <button>title</button>
+              <br>
+              <button>title</button>
+              <br>
+              <button>title</button>
+              <br>
+              <button>title</button>
+                      
+            </p>
+            <!-- <div class="btn-box">
               <a href="">
                 Read More
               </a>
-            </div>
+            </div> -->
           </div>
+         
         </div>
-        <div class="col-md-6">
-          <div class="box ">
-            <div class="img-box">
-              <img src="{% static 'images/s3.png'%}" alt="">
-            </div>
-            <div class="detail-box">
-              <h6>
-                Tourist Visa
-              </h6>
-              <p>
-                Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="box ">
-            <div class="img-box">
-              <img src="{% static 'images/s4.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h6>
-                Student Visa
-              </h6>
-              <p>
-                Minima consequatur architecto eaque assumenda ipsam itaque quia eum in doloribus debitis impedit ut minus tenetur corrupti excepturi ullam.
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
+       
+        
       </div>
     </div>
   </section>
 
-  <!-- end service section -->
+  <!-- end about section -->
 
   <!-- info section -->
   <section class="info_section ">
@@ -308,10 +293,10 @@
   </footer>
   <!-- footer section -->
 
-  <script src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
-  <script src="{% static 'js/bootstrap.js'%}"></script>
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js'"></script>
   <!-- owl slider -->
-  <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'% }">
+  <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' %}">
   </script>
   <script src="{% static 'js/custom.js'%}"></script>
 

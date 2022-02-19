@@ -18,8 +18,10 @@ def about(request):
 #return content page
 def content(request):
     videos = Videos.objects.all()
+    front =Videos.objects.get(title='test')
+    
 
-    return render(request,'content.html',{"video":videos})
+    return render(request,'content.html',{"videos":videos,"front":front})
 
 
 #return contact page
