@@ -29,3 +29,9 @@ def contact(request):
 
 
     return render(request,'contact.html')
+def front(request,title):
+    videos = Videos.objects.all()
+    front =Videos.objects.get(title=title)
+
+    return render(request,'content.html',{"videos":videos,"front":front})
+    

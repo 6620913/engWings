@@ -492,7 +492,7 @@ a:focus {
 .about_section .detail-box {
     background-color: #ffffff;
     
-    padding: 2%;
+    padding: 2px;
     -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
             box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
     position: relative;
@@ -532,7 +532,7 @@ a:focus {
 }
 .about_section .detail-box a {
   display: inline-block;
-  padding: 10px;
+  padding: 5px;
   background-color: #8eec69;
   color: #ffffff;
   -webkit-transition: all 0.3s;
@@ -543,8 +543,13 @@ a:focus {
 
 .about_section .detail-box a:hover {
   background-color: transparent;
-  border-color: #8eec69;
+  border-color: #326e1a;
   color: #8eec69;
+}
+.OptionContainer img{
+
+  height: 200px;
+
 }
 
 
