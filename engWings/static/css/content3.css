@@ -1,0 +1,46 @@
+body {
+    /* background-image: url("/static/images/hero-bg.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(248, 224, 201);
+}
+ .content_container{
+
+    display: flex;
+    margin: 5px;
+}
+.front{
+    width: 50rem;
+}
+
+
+.item1{
+    display: block;
+    width: 50rem;
+}
+.item2{
+    width: 50%;
+    position: relative;
+    align-self: right;
+}
+
+/*----------------- scroll-Bar--------------------------- */
+.scroll_bar a img{
+    width: 20rem;
+    
+    height: 10rem;
+}
+.scroll_bar{
+    margin-left: 5px;
+    display: flex;
+
+}.scroll_bar{
+    margin-left: 5px;
+    display: flex;
+
+}
+.scrolitem{
+    
+    display: flex;
+    flex-direction: row;
+}
