@@ -18,7 +18,7 @@ def about(request):
 #return content page
 def content(request):
     videos = Videos.objects.all()
-    front =Videos.objects.get(title='test')
+    front =Videos.objects.get(title='Introduction')
     
 
     return render(request,'content.html',{"videos":videos,"front":front})
