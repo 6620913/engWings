@@ -336,7 +336,7 @@ a:focus {
 }
 
 .slider_section .detail-box h1 {
-  text-transform: none;
+  text-transform: capitalize;
   font-size: 3rem;
   color: #ffffff;
   font-weight: 600;
