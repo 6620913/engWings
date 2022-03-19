@@ -12,7 +12,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="{ % static 'images/favicon.png'%}" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static 'images/favicon.png'%}" type="image/x-icon">
 
   <title>EngWings -> Content</title>
 
@@ -114,8 +114,8 @@
             </div>
           </div> -->
           <div class="item1">
-            <video class="front" controls="controls">
-                <source src="{{front.video.url}}" type="video/mp4" />
+            <video class="embed-responsive embed-responsive-16by9" controls="controls" autoplay>
+                <source src="{{front.video.url}}" />
                 <h3 class="text-center mt-2 mb-2"> {{video.title}}</h3>
 
             </video>
@@ -183,7 +183,7 @@
   <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.js'%}"></script>
   <!-- owl slider -->
-  <script src="{ % static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' %}">
+  <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' %}">
   </script>
   <script src="{% static 'js/custom.js'%}"></script>
 

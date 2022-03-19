@@ -199,11 +199,11 @@ body {
   padding: 10px 0;
 }
 
-#navbarSupportedContent {
+/* #navbarSupportedContent {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
+} */
 
 .custom_nav-container {
   z-index: 99999;
@@ -219,9 +219,9 @@ body {
   padding: 10px 15px;
   color: #ffffff;
   text-align: center;
-  text-transform: uppercase;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  text-transform: capitalize;
+  /* -webkit-transition: all .2s;
+  transition: all .2s; */
 }
 
 a,
