@@ -762,6 +762,14 @@ a:focus {
   color: #ffffff;
   padding: 75px 0 10px 0;
 }
+.info_section .container .row{
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+}
+.info_section .container .row .col{
+  /* text-align: center; */
+}
 
 .info_section .row > div {
   margin-bottom: 25px;
