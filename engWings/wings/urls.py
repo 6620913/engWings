@@ -10,6 +10,7 @@ urlpatterns = [
     path('about',views.about, name='about'),
     path('content',views.content, name='content'),
     path('contact',views.contact, name='contact'),
+    path('contactform',views.contactform, name='contactform'),
     path('front/<str:title>',views.front,name='front'),
 
 ]

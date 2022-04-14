@@ -765,7 +765,7 @@ a:focus {
 .info_section .container .row{
   display: flex;
   /* flex-wrap: wrap; */
-  flex-direction: column;
+  flex-direction: row;
 }
 .info_section .container .row .col{
   /* text-align: center; */
