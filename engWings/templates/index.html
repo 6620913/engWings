@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>  
+<head>
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +12,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" >
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
 
   <title>EngWings</title>
 
@@ -20,10 +20,12 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" type="text/css"
+    href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
 
   <!-- fonts style -->
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap' %}" rel="stylesheet" />
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap' %}"
+    rel="stylesheet" />
 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
@@ -32,19 +34,21 @@
 </head>
 
 <body>
-  <!-- css readed of this below-part -->
-  <div class="hero_area">
-    <!-- header section strats -->
-    <div class="hero_bg_box">
-      <div class="img-box">
-        <img src="{% static 'images/0001.jpg' %}" alt="">
-      </div>
-    </div>
-    <!-- css readed of above-part -->
+ 
+
+       <!-- css readed of this below-part -->
+       <div class="hero_area" style="height:100vh">
+        <!-- header section strats -->
+        <div class="hero_bg_box">
+          <div class="img-box">
+            <img src="{% static 'images/0001.jpg' %}" alt="">
+          </div>
+        </div>
+        <!-- css readed of above-part -->
 
 
     <header class="header_section">
-     
+
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
@@ -53,7 +57,8 @@
                 EngWings
               </span>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""></span>
             </button>
 
@@ -63,7 +68,7 @@
                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/content"> Content </a>
+                  <a class="nav-link" href="/courses"> Courses </a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="/about"> About</a>
@@ -81,90 +86,101 @@
       </div>
     </header>
     <!-- end header section -->
-    
-    <!-- slider section -->
-    <section class=" slider_section ">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-9 col-lg-7">
-                  <div class="detail-box">
-                    <h1>
-                      Dream, Learn, Speak
-                    </h1>
-                    <p>
-                      Practise with us every day. We learn from mistakes.
-                      
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn-1"> Read more </a>
-                      <a href="" class="btn-2">Get A Quote</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-9 col-lg-7">
-                  <div class="detail-box">
-                    <h1>
-                      Dream, Learn, Speak
-                    </h1>
-                    <p>
-                      Practise with us every day. We learn from mistakes.
-                      
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn-1"> Read more </a>
-                      <a href="" class="btn-2">Get A Quote</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-9 col-lg-7">
-                  <div class="detail-box">
-                    <h1>
-                      Dream, Learn, Speak
-                    </h1>
-                    <p>
-                      Practise with us every day. We learn from mistakes.
-                      
-                    </p>
 
-                    <div class="btn-box">
-                      <a href="" class="btn-1"> Read more </a>
-                      <a href="" class="btn-2">Get A Quote</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+
+    <!-- about section -->
+  
+
+    <section class="about_section layout_padding" >
+      <div class="container" style="height: 70vh;">
+        <div class="row">
+          <div class="col-lg-6 px-0" style="height: 100%;">
+
+            <div class="item1" style="margin:20px;">
+
+
+              <video style="width: 100%;" class="embed-responsive embed-responsive-16by9" controls="controls" autoplay>
+                <source src="{{front.video.url}}" />
+                <h3 class="text-center mt-2 mb-2"> {{video.title}}</h3>
+
+              </video>
+
+
             </div>
           </div>
-        </div>
-        <div class="container idicator_container">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
+
+          <div class="col-lg-6 px-0" style="height: 100%;">
+            <div class="detail-box " style="margin-left:0px;">
+              <div class="heading_container ">
+                <h2 style="text-transform: none;">
+                  Dream, Learn, Speak
+                </h2>
+              </div>
+              <p>
+                Practise with us every day. We learn from mistakes.
+
+              </p>
+              <div class="btn-box">
+                <a href="/about">
+                  About us
+                </a>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <!-- end about -->
+
+ 
+
+
+    <!-- slider section
+  <section class=" slider_section ">
+
+    
+      <div class="col-lg-6 px-0">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-9 col-lg-7">
+                    <div class="detail-box">
+                      <h1>
+                        Dream, Learn, Speak
+                      </h1>
+                      <p>
+                        Practise with us every day. We learn from mistakes.
+
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn-1"> Read more </a>
+                        <a href="" class="btn-2">Get A Quote</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+  </section> -->
     <!-- end slider section -->
-  </div>
+  
 
 
-  <footer class="container-fluid footer_section">
+
+ 
+
+
+  <footer class="container-fluid footer_section" >
     <p>
       &copy; <span id="displayYear"></span> All Rights Reserved By
       <a href="/">EngWings</a>
@@ -179,6 +195,8 @@
   </script>
   <script src="{% static 'js/custom.js' %}"></script>
 
+
+</div>
 </body>
 
 </html>

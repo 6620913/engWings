@@ -20,10 +20,12 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" type="text/css"
+    href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
 
   <!-- fonts style -->
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap' %}" rel="stylesheet" />
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap' %}"
+    rel="stylesheet" />
 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/content.css'%}" rel="stylesheet" />
@@ -73,7 +75,8 @@
                 EngWings
               </span>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""></span>
             </button>
 
@@ -83,12 +86,12 @@
                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/content"> Content </a>
+                  <a class="nav-link" href="/courses"> Content </a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="/about"> About</a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a class="nav-link" href="/contact">Contact us</a>
                 </li>
@@ -105,6 +108,12 @@
 
   <section class="content_section layout_padding">
     <div class="container">
+
+      <div class="heading_container heading_center" style=" color:white;padding-bottom:10px">
+        <h2 style="text-transform: none;">
+          {{ctitle.name}}
+        </h2>
+      </div>
       <div class="row">
         <div class="col-lg-6 px-0">
           <!-- <div class="img_container">
@@ -115,69 +124,52 @@
           </div> -->
           <div class="item1">
             <video class="embed-responsive embed-responsive-16by9" controls="controls" autoplay>
-                <source src="{{front.video.url}}" />
-                <h3 class="text-center mt-2 mb-2"> {{video.title}}</h3>
+              <source src="{{front.video.url}}" />
+              <h3 class="text-center mt-2 mb-2"> {{video.title}}</h3>
 
             </video>
 
-        </div>
-        </div>
-        
-        <div class="col-lg-6 px-0">
-            <div class="item2">
-                <div class="scroll_bar">
-                    <div class="col">
-                        {% for video in videos %}
-                        <div class="OptionContainer" height="300px">
-                            <a href="/front/{{video.title}}">
-
-                                <!-- <video src="{{video.video.url}}"></video> -->
-                                <div class="scrolitem">
-
-                                    <div class="thumb">
-                                        <img src="{{video.thumbnail.url}}" alt="">
-                                    </div>
-
-                                    <div class="disc">
-                                        <h3>{{video.title}}</h3>
-                                        <p class="text-center mt-2 mb-2"> {{video.disc}}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-
-            </div>
-          <!-- <div class="detail-box">
-            <div class="heading_container ">
-              <h2>
-                Who Are We?
-              </h2>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-              in reprehenderit in voluptate velit
-            </p>
-            <div class="btn-box">
-              <a href="">
-                Read More
-              </a>
-            </div> -->
           </div>
         </div>
+
+        <div class="col-lg-6 px-0">
+          <div class="item2">
+            <div class="scroll_bar">
+              <div class="col">
+                {% for i in content %}
+                <div class="OptionContainer" height="300px">
+                  <a href="/front/{{i.id}}/{{i.course_id}}">
+
+                    <!-- <video src="{{video.video.url}}"></video> -->
+                    <div class="scrolitem">
+
+                      <div class="thumb">
+                        <img src="{{i.thumbnail.url}}" alt="">
+                      </div>
+
+                      <div class="disc">
+                        <h3>{{i.title}}</h3>
+                        <p class="text-center mt-2 mb-2"> {{i.disc}}</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- end about section -->
-  
-  
-  
+
+
+
 
 
   <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>

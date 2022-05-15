@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # from sklearn.metrics import mean_gamma_deviance
-from .models import Videos
+from .models import Videos,Courses
 # contactform
 import os
 import smtplib
@@ -13,9 +13,9 @@ from email.message import EmailMessage
 
 # Create your views here.
 def index(request):
+    front = Videos.objects.get(course_id=0)
 
-
-    return render(request,'index.html')
+    return render(request,'index.html',{"front":front})
 
 #return about page
 def about(request):
@@ -24,12 +24,13 @@ def about(request):
     return render(request,'about.html')
 
 #return content page
-def content(request):
-    videos = Videos.objects.all()
-    front =Videos.objects.get(title='Introduction')
+def content(request,course_id):
+    content = Videos.objects.filter(course_id=course_id).order_by("cvs")
+    front = content[0]
+    ctitle = Courses.objects.get(course_id=course_id)
     
 
-    return render(request,'content.html',{"videos":videos,"front":front})
+    return render(request,'content.html',{"content":content,"front":front,"ctitle":ctitle})
 
 
 #return contact page
@@ -37,11 +38,16 @@ def contact(request):
 
 
     return render(request,'contact.html')
-def front(request,title):
-    videos = Videos.objects.all()
-    front =Videos.objects.get(title=title)
 
-    return render(request,'content.html',{"videos":videos,"front":front})
+def front(request,id,course_id):
+    content = Videos.objects.filter(course_id=course_id).order_by("cvs")
+    front = Videos.objects.get(id=id)
+    ctitle = Courses.objects.get(course_id=course_id)
+    
+
+    return render(request,'content.html',{"content":content,"front":front,"ctitle":ctitle})
+    
+   
 
 def contactform(request):
    
@@ -74,3 +80,9 @@ def contactform(request):
    
     return render(request,'contact.html')
         
+# return courses page with courses data
+def courses(request):
+    courses = Courses.objects.all()
+    
+
+    return render(request,'courses.html',{"courses":courses})
