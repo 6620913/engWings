@@ -768,7 +768,7 @@ a:focus {
   flex-direction: row;
 }
 .info_section .container .row .col{
-  /* text-align: center; */
+  text-align: center;
 }
 
 .info_section .row > div {
@@ -904,4 +904,3 @@ a:focus {
   display: block;
   /* width: 40rem; */
 }
-

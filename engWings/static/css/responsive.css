@@ -41,6 +41,9 @@
     -o-object-position: bottom center;
     object-position: bottom center;
   }
+  
+
+
 }
 
 @media (max-width: 767px) {
@@ -125,3 +128,4 @@
     max-width: 1170px;
   }
 }
+

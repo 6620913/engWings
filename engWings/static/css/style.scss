@@ -9,11 +9,11 @@ $primary2: #8eec69;
 @import url("font-awesome.min.css");
 
 @mixin main-font {
-  font-family: "Poppins", sans-serif;
+  font-family: cursive;
 }
 
 @mixin second-font {
-  font-family: "Poppins", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 // btn style
@@ -40,6 +40,7 @@ $primary2: #8eec69;
 
 body {
   @include main-font;
+  
   color: #0c0c0c;
   background-color: #ffffff;
 }
@@ -390,7 +391,7 @@ a:focus {
     }
   }
 
-  #carouselExampleIndicators {}
+  #carouselExampleIndicators {
 
   .idicator_container {
     position: relative;
@@ -877,5 +878,14 @@ a:focus {
     color: inherit;
   }
 }
-
+}
 /* end footer section*/
+
+
+@media (min-width:992px){
+  .info_section .container .row{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
