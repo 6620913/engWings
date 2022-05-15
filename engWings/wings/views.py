@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 # from sklearn.metrics import mean_gamma_deviance
 from .models import Videos,Courses
 # contactform
@@ -6,10 +6,21 @@ import os
 import smtplib
 # import imghdr
 from email.message import EmailMessage
+
+
+
+# for login register logut features.
+from django.contrib.auth.models import User,auth
+from django.contrib import messages
+
 # --------------------------------------------
 
-    #dests=courses.objects.all()
-    #return render(request,'index.html',{'dests':dests})
+
+
+
+
+
+
 
 # Create your views here.
 def index(request):
@@ -25,12 +36,16 @@ def about(request):
 
 #return content page
 def content(request,course_id):
-    content = Videos.objects.filter(course_id=course_id).order_by("cvs")
-    front = content[0]
-    ctitle = Courses.objects.get(course_id=course_id)
-    
+    if request.user.is_authenticated:
 
-    return render(request,'content.html',{"content":content,"front":front,"ctitle":ctitle})
+        content = Videos.objects.filter(course_id=course_id).order_by("cvs")
+        front = content[0]
+        ctitle = Courses.objects.get(course_id=course_id)
+        
+
+        return render(request,'content.html',{"content":content,"front":front,"ctitle":ctitle})
+    else:
+        return redirect("login")
 
 
 #return contact page
@@ -86,3 +101,65 @@ def courses(request):
     
 
     return render(request,'courses.html',{"courses":courses})
+
+
+
+'''
+login, register, logout features
+
+'''
+
+def login(request):
+    if request.method=="POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username,password=password)
+
+        if user is not None:
+            auth.login(request,user)
+            return redirect("/")
+        else:
+            messages.info(request,"invalid credentials")
+            return redirect("login")
+
+    else:
+        return render(request,"login.html")
+
+def register(request):
+
+
+    if request.method=="POST":
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+        if(password1!=password2):
+            print("password not match")
+            messages.info(request,"password not match")
+            return redirect("register")
+        elif(User.objects.filter(username=username).exists()):
+            messages.info(request,"Username taken")
+            return redirect("register")
+
+        elif (User.objects.filter(email=email).exists()):
+            messages.info(request,"email already registerd")
+            return redirect("register")
+        elif ("@" not in email):
+            messages.info(request,"invalid email")
+            return redirect("register")
+        
+        else:
+
+            user = User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)
+            messages.info(request,"You are registerd now")
+            user.save()
+            return redirect("login")
+    else:
+        return render(request,'register.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')

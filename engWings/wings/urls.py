@@ -13,5 +13,8 @@ urlpatterns = [
     path('contactform',views.contactform, name='contactform'),
     path('front/<int:id>/<int:course_id>',views.front,name='front'),
     path('courses',views.courses, name='courses'),
+    path('login',views.login, name='login'),
+    path('register',views.register, name='register'),
+    path('logout',views.logout, name='logout'),
 
 ]
