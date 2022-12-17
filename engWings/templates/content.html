@@ -14,6 +14,10 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="{% static 'images/favicon.png'%}" type="image/x-icon">
 
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
   <title>EngWings -> Content</title>
 
   <!-- bootstrap core css -->
@@ -95,7 +99,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/contact">Contact us</a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a class="nav-link" href="">Hello, {{user.first_name}}</a>
                 </li>
@@ -105,8 +109,8 @@
                 </li>
 
 
-              
-               
+
+
               </ul>
             </div>
           </nav>
@@ -131,7 +135,7 @@
           <!-- <div class="img_container">
             <div class="img-box">
               <img src="{% static 'images/about-img.jpg'%}" alt="" />
-              
+
             </div>
           </div> -->
           <div class="item1">
@@ -153,15 +157,15 @@
                   <a href="/front/{{i.id}}/{{i.course_id}}">
 
                     <!-- <video src="{{video.video.url}}"></video> -->
-                    <div class="scrolitem">
+                    <div class="scrolitem" style="padding-bottom:25px;">
 
                       <div class="thumb">
-                        <img src="{{i.thumbnail.url}}" alt="">
+                        <img src="{{i.thumbnail.url}}"alt="">
                       </div>
 
                       <div class="disc">
-                        <h3>{{i.title}}</h3>
-                        <p class="text-center mt-2 mb-2"> {{i.disc}}</p>
+                        <h4 style="font-weight:bold;color:gray;">{{i.title}}</h4>
+                        <p style="text-align:left; class="text-center mt-2 mb-2"> {{i.disc}}</p>
                       </div>
                     </div>
                   </a>

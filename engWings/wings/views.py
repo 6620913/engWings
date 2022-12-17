@@ -41,7 +41,7 @@ def content(request,course_id):
         content = Videos.objects.filter(course_id=course_id).order_by("cvs")
         front = content[0]
         ctitle = Courses.objects.get(course_id=course_id)
-        
+
 
         return render(request,'content.html',{"content":content,"front":front,"ctitle":ctitle})
     else:
@@ -55,26 +55,30 @@ def contact(request):
     return render(request,'contact.html')
 
 def front(request,id,course_id):
-    content = Videos.objects.filter(course_id=course_id).order_by("cvs")
-    front = Videos.objects.get(id=id)
-    ctitle = Courses.objects.get(course_id=course_id)
-    
+    if request.user.is_authenticated:
 
-    return render(request,'content.html',{"content":content,"front":front,"ctitle":ctitle})
-    
-   
+        content = Videos.objects.filter(course_id=course_id).order_by("cvs")
+        front = Videos.objects.get(id=id)
+        ctitle = Courses.objects.get(course_id=course_id)
+
+
+        return render(request,'content.html',{"content":content,"front":front,"ctitle":ctitle})
+    else:
+        return redirect("login")
+
+
 
 def contactform(request):
-   
-    
+
+
 
     first_name = request.POST['first_name']
     last_name = request.POST['last_name']
-    
+
     email = request.POST['email']
     phone_number=request.POST['phone_number']
     mg = request.POST['message']
-        
+
 
     EMAIL_ADDRESS = 'nerthinksjareen@gmail.com'
     EMAIL_PASSWORD = 'Ironman@12'
@@ -82,23 +86,23 @@ def contactform(request):
     msg = EmailMessage()
     msg['Subject'] = 'contacting'
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = email
+    msg['To'] = EMAIL_ADDRESS
 
-    msg.set_content(mg)
-    
-   
-    
+    msg.set_content(f"Contacting: {email}\n Phone: {phone_number}\n : {first_name} {last_name}\n message: {mg} ")
+
+
+
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
         smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         smtp.send_message(msg)
 
-   
+
     return render(request,'contact.html')
-        
+
 # return courses page with courses data
 def courses(request):
     courses = Courses.objects.all()
-    
+
 
     return render(request,'courses.html',{"courses":courses})
 
@@ -111,7 +115,7 @@ login, register, logout features
 
 def login(request):
     if request.user.is_authenticated==False:
-            
+
         if request.method=="POST":
             username = request.POST['username']
             password = request.POST['password']
@@ -156,7 +160,7 @@ def register(request):
             elif ("@" not in email):
                 messages.info(request,"invalid email")
                 return redirect("register")
-            
+
             else:
 
                 user = User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)

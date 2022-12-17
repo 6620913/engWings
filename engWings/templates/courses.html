@@ -14,7 +14,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="{ % static 'images/favicon.png'%}" type="image/x-icon">
 
-  <title>EngWings -> about</title>
+  <title>EngWings -> Courses</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
@@ -85,7 +85,7 @@
                 </li>
 
 
-              
+
                 {% else %}
 
                 <li class="nav-item">
@@ -95,7 +95,7 @@
                   <a class="nav-link" href="/register">Register</a>
                 </li>
 
-                
+
                  {% endif %}
               </ul>
             </div>
@@ -107,18 +107,19 @@
   </div>
 
   <!-- about section -->
+
   <section class="about_section layout_padding">
-    <div class="container" style="height: 70vh;">
+    <div class="container" >
       <div class="heading_container heading_center" style=" color:white;padding-bottom:10px">
         <h2 style="text-transform: none;">
           Courses
         </h2>
       </div>
- {% for i in courses %}
-  
+
+{% for i in courses %}
       <div class="row">
         <div class="col-lg-6 px-0">
-          <div class="img_container">
+          <div class="img_container" style="margin:20px;">
             <div class="img-box">
               <img src="{{i.thumbnail.url}}" alt="" />
 
@@ -136,7 +137,7 @@
             <p>
               {{i.disc}}
             </p>
-            
+
             <div class="btn-box">
               <a href="/content/{{i.course_id}}">
                 Visit course
@@ -145,11 +146,12 @@
           </div>
         </div>
       </div>
-   
+
 
   {%endfor%}
 </div>
 </section>
+
   <!-- end about section -->
 
 
@@ -192,7 +194,7 @@
                   </svg> EngWingsfree
                 </a>
               </li>
-             
+
             </ul>
           </div>
         </div>
@@ -203,7 +205,7 @@
             </h5>
           </div>
           <div class="info_contact">
-            
+
             <a href="" class="">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
@@ -218,7 +220,7 @@
             </a>
           </div>
         </div>
-      
+
         </div>
       </div>
     </div>
